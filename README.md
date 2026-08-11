@@ -1,10 +1,10 @@
-# Awesome Continual Learning for Vision-Language Models 
+# Awesome Continual Learning for Vision-Language Models & MLLMs
 
-[![ArXiv](https://img.shields.io/badge/ArXiv-paper-B31B1B.svg?logo=arXiv&logoColor=Red)](https://arxiv.org/pdf/2508.04227v1.pdf)
-[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+[![ArXiv](https://img.shields.io/badge/ArXiv-paper-B31B1B.svg?logo=arXiv&logoColor=Red)](https://arxiv.org/pdf/2508.04227v3.pdf)[cite: 1]
+[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)[cite: 2]
 
-> A curated list of papers, codebases, and datasets for continual learning in vision-language models (VLMs), accompanying our survey paper.
-> *Last updated: 2026-04-16*
+> A curated list of papers, codebases, and datasets for continual learning in vision-language models (VLMs) and Multimodal Large Language Models (MLLMs), accompanying our survey paper.
+> *Last updated: 2026-08*
 
 <p align="center">
   <img src="./assets/Methods_Overview_01.png" alt="Overview of VLM-CL" width="500"/>
@@ -12,23 +12,35 @@
 
 ---
 
+## 📑 Table of Contents
+- [Latest News](#-latest-news)
+- [Citing Our Work](#-citing-our-work)
+- [Overview & Challenges](#-overview--challenges)
+- [Taxonomy](#-taxonomy)
+- [🏆 Mini Leaderboard (SOTA Performance)](#-mini-leaderboard-sota-performance)
+- [📄 Papers](#-papers)
+- [🗂️ Datasets & Benchmarks](#️-datasets--benchmarks)
+- [🚀 Future Directions](#-future-directions)
+
+---
+
 ## 🔥 Latest News
-- **[2025.08]** Our survey paper, **“Continual Learning for VLMs: A Survey and Taxonomy Beyond Forgetting”**, is now available on **arXiv**.
+- **[2026.08]** Our survey paper, **“Continual Learning for VLMs: A Survey and Taxonomy Beyond Forgetting” (v3)**, is now available on **arXiv**.
 - **[2026.03]** We have updated the repository with a new collection of recent papers and resources to reflect the latest advances in **VLM continual learning**.
 - **[Ongoing]** This repository is under active maintenance and will be continuously updated with newly released papers, code, and benchmarks from the community.
+
 ---
 
 ## 📣 Citing Our Work
-This repository is the official resource hub for our survey paper, **"Continual Learning for VLMs: A Survey and Taxonomy Beyond Forgetting"**. If you find this repository or our survey useful for your research, please consider citing our work:
+If you find this repository or our survey useful for your research, please consider citing our work:
 
 ```bibtex
-@article{liu2025continual,
+@article{liu2026continual,
   title={Continual Learning for VLMs: A Survey and Taxonomy Beyond Forgetting},
   author={Liu, Yuyang and Hong, Qiuhe and Huang, Linlan and Gomez-Villa, Alexandra and Goswami, Dipam and Liu, Xialei and van de Weijer, Joost and Tian, Yonghong},
   journal={arXiv preprint arXiv:2508.04227},
-  year={2025}
+  year={2026}
 }
-```
 
 
 ---
