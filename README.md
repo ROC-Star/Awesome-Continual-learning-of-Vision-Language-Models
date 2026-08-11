@@ -1,7 +1,7 @@
 # Awesome Continual Learning for Vision-Language Models & MLLMs
 
-[![ArXiv](https://img.shields.io/badge/ArXiv-paper-B31B1B.svg?logo=arXiv&logoColor=Red)](https://arxiv.org/pdf/2508.04227v3.pdf)[cite: 1]
-[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)[cite: 2]
+[![ArXiv](https://img.shields.io/badge/ArXiv-paper-B31B1B.svg?logo=arXiv&logoColor=Red)](https://arxiv.org/pdf/2508.04227v3.pdf)
+[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
 > A curated list of papers, codebases, and datasets for continual learning in vision-language models (VLMs) and Multimodal Large Language Models (MLLMs), accompanying our survey paper.
 > *Last updated: 2026-08*
