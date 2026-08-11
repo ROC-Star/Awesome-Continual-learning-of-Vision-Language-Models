@@ -189,26 +189,68 @@ Expansion for Continual Visual Instruction Tuning. [[PDF](https://arxiv.org/pdf/
 ---
 
 ## 🗂️ Datasets & Benchmarks
-Evaluating VLM-CL requires specialized benchmarks. Our survey categorizes them into three tiers: **Repurposed Unimodal**, **Adapted Multimodal**, and **Native VLM-CL** benchmarks. The table below summarizes key datasets used in the literature.
+Evaluating VLM-CL requires specialized benchmarks. As detailed in our survey, the landscape of benchmarks for vision-language continual learning has evolved into three tiers: **Repurposed Unimodal**, **Adapted Multimodal**, and **Native VLM/MLLM-Specific** benchmarks. 
 
-| Dataset          | Task Type              | CL Scenario  | Modality            | Domain                 | # Tasks | Scale (Approx.)              | Link/Source                                                  |
-| ---------------- | ---------------------- | ------------ | ------------------- | ---------------------- | ------- | ---------------------------- | ------------------------------------------------------------ |
-| **Climb** | VQA, Retrieval         | TIL          | Image+Text          | General                | 4       | 1.1M QA/Pairs                | [[GitHub](https://github.com/GLAMOR-USC/CLiMB)]              |
-| **VQACL** | VQA                    | TIL/DIL      | Image+Text          | Scenes & Functions     | 2+      | 100K QA                      | [[GitHub](https://github.com/zhangxi1997/VQACL)]             |
-| **COCO-CL** | Detection, Seg, Ret.   | CIL          | Image+Annotations   | Natural Scenes         | 80      | 200K+ Instances              | [[Paper](https://arxiv.org/abs/2003.04668)]                   |
-| **TiC-Benchmark**| Retrieval, Class.      | Time-IL      | Image+Text          | Web Crawled            | 9-17    | 12M - 12.7B Pairs            | [[Paper](https://arxiv.org/abs/2310.16226)]                  |
-| **MTIL** | Classification         | TIL/CIL      | Image               | 11 Natural Image Sets  | 11      | 438K Images                  | [[Paper](https://arxiv.org/abs/2303.06628)]                  |
-| **MDL-VQA** | VQA                    | DIL          | Image+Text          | 5 Visual Domains       | 5       | 150K QA                      | [[Paper](https://dl.acm.org/doi/10.1145/3581783.3612121)]    |
-| **ImageNet-CIL** | Classification         | CIL          | Image               | Natural Images         | 10-100  | 1.3M Images                  | [[Link](http://www.image-net.org/)]                          |
-| **DomainNet** | Classification         | DIL          | Image               | 6 Domains              | 6       | 600K Images                  | [[Link](http://ai.bu.edu/DomainNet/)]                        |
-| **CIFAR100-CIL** | Classification         | CIL          | Image               | Natural Images         | 10      | 60K Images                   | [[Link](https://www.cs.toronto.edu/~kriz/cifar.html)]         |
-| **CLEAR** | Classification         | CIL/DIL      | Image               | Temporal Natural Images| 10      | 4.3M - 18.6M Images          | [[Homepage](https://clear-benchmark.github.io/)]             |
-| **CLeaRS** | Class./VQA/Ground./Cap. | TIL | Image+Text | Remote Sensing | 10 | 207K+ Pairs | [[GitHub](https://github.com/XingxingW/CLeaRS-Preview)] |
+The tables below summarize all key datasets used in the literature according to this evolutionary taxonomy.
+
+### 1. Repurposed Unimodal Benchmarks
+*Adapted from traditional computer vision datasets. They offer scalability for evaluating catastrophic forgetting, but provide limited insights into cross-modal misalignment.*
+
+| Dataset | Task Type | Scenario | Modality | Size | Metrics | Link/Source |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **CDDB** | Classification | DIL | Image | 50K | Accuracy | [[Paper](https://arxiv.org/abs/2205.05467)] |
+| **CORe50** | Classification | DIL | Video | 50K | Accuracy | [[Paper](https://arxiv.org/abs/1705.03550)] |
+| **DomainNet** | Classification | DIL | Image | 600K | Accuracy | [[Link](http://ai.bu.edu/DomainNet/)] |
+| **Conceptual12M** | Segmentation | CIL / IIL | Image+Text | 12M | IoU, AP | [[Paper](https://arxiv.org/abs/2102.08981)] |
+| **ImageNet-100/1K**| Classification | CIL / DIL | Image | 130K-1.3M | Accuracy | [[Link](http://www.image-net.org/)] |
+| **TinyImageNet** | Classification | CIL | Image | 100K | Accuracy | [[Paper](https://ieeexplore.ieee.org/document/5206848)] |
+| **CIFAR100** | Classification | CIL | Image | 60K | Accuracy | [[Link](https://www.cs.toronto.edu/~kriz/cifar.html)] |
+| **CUB200** | Classification | CIL | Image | 11.7K | Accuracy | [[Link](http://www.vision.caltech.edu/datasets/cub_200_2011/)] |
+| **CLEAR-10/100** | Classification | CIL / DIL | Image | 4.3M-18.6M | Accuracy | [[Homepage](https://clear-benchmark.github.io/)] |
+| **ADE20K-CL** | Segmentation | CIL | Image+Annotations | 25K | IoU | [[Link](https://groups.csail.mit.edu/vision/datasets/ADE20K/)] |
+
+### 2. Adapted Multimodal Benchmarks
+*Reconfigured from existing multimodal datasets. These preserve cross-modal interactions while introducing continual learning protocols.*
+
+| Dataset | Task Type | Scenario | Modality | Size | Metrics | Link/Source |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **MDL-VQA** | VQA | DIL | Image+Text | 150K | Accuracy | [[Paper](https://dl.acm.org/doi/10.1145/3581783.3612121)] |
+| **P9D** | Retrieval | DIL / TIL | Image+Text | 1M+ | AP | [[Paper](https://arxiv.org/abs/2308.07146)] |
+| **Flickr30K** | Retrieval | CIL | Image+Annotations | 30K | Accuracy | [[Link](https://shannon.cs.illinois.edu/DenotationGraph/)] |
+| **ECommerce-T2I**| Retrieval | CIL | Image+Annotations | 15K | Accuracy | [[Paper](https://dl.acm.org/doi/10.1145/3447548.3467206)] |
+| **NExT-QA** | VQA | TIL | Videos+Text | 52K | AP | [[GitHub](https://github.com/doc-doc/NExT-QA)] |
+
+### 3. VLM/MLLM-Specific Benchmarks
+*Explicitly designed to address cross-modal forgetting pathologies, zero-shot decay, compositional transfer, and instruction-tuning alignment.*
+
+| Dataset | Task Type | Scenario | Modality | Size | Metrics | Link/Source |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **CLiMB** | VQA | TIL | Image+Text | 1.1M | Accuracy, F1 | [[GitHub](https://github.com/GLAMOR-USC/CLiMB)] |
+| **VQACL** | VQA | TIL / DIL | Image+Text | 100K | Accuracy | [[GitHub](https://github.com/zhangxi1997/VQACL)] |
+| **COCO-CL** | Seg. / Ret. | CIL | Image+Annotations | 200K+ | AP, IoU, Acc. | [[Paper](https://arxiv.org/abs/2003.04668)] |
+| **TiC** | Ret. / Class. | Time-IL | Image+Text | 127M/1B/12B | Acc., Recall | [[Paper](https://arxiv.org/abs/2310.16226)] |
+| **CoIN** | VQA | TIL | Image+Text | 740K | Accuracy | [[Paper](https://arxiv.org/abs/2403.08350)] |
+| **UCIT** | VQA | TIL | Image+Text | 231K | Accuracy | [[Paper](https://arxiv.org/abs/2503.12941)] |
+| **MLLM-CL** | VQA | DIL / AIL | Image+Text | 392.7K/925K | Accuracy | [[Paper](https://arxiv.org/abs/2506.05453)] |
+| **MLLM-CTBench**| VQA | TIL | Image+Text | 70K | Accuracy | [[Paper](https://arxiv.org/abs/2508.08275)] |
+| **CLeaRS** | VQA | DIL / TIL | Image+Text | 207K | Accuracy | [[GitHub](https://github.com/XingxingW/CLeaRS-Preview)] |
+| **ToS** | VQA/Cap. | DIL | Image+Text | 935K | Accuracy | [[Paper](https://arxiv.org/abs/2606.12633)] |
+| **MTIL** | Classification| TIL / CIL | Image | 438.3K | Accuracy | [[Paper](https://arxiv.org/abs/2303.06628)] |
+| **VTAB** | Classification| CIL | Image | 10K | Accuracy | [[Paper](https://arxiv.org/abs/1910.04867)] |
+| **CLOVE** | VQA | DIL / TIL | Image+Text | N/A | Accuracy | [[Paper](https://arxiv.org/abs/2208.12037)] |
+| **OMNI** | Classification| CIL | Image | 1M+ | Accuracy | [[Paper](https://arxiv.org/abs/2409.15272)] |
+| **IMRE** | RE | TIL | Image+Text | 9K | F1 | [[GitHub](https://github.com/zjunlp/ContinueMKGC)] |
+| **IMNER** | NER | TIL | Image+Text | 8.5K | F1 | [[GitHub](https://github.com/zjunlp/ContinueMKGC)] |
 
 #### Notes on CL Scenarios:
 - **CIL (Class-Incremental Learning)**: New classes are added in sequential tasks.
 - **TIL (Task-Incremental Learning)**: Tasks are distinct, and the task identity is known at inference time.
 - **DIL (Domain-Incremental Learning)**: The data distribution shifts across tasks (e.g., photos to sketches), but the task itself remains the same.
+- **IIL (Instance-Incremental Learning)**: New training instances of previously seen classes appear over time.
+- **AIL (Ability-Incremental Learning)**: The model sequentially acquires new capabilities or skills.
+- **Time-IL (Time-Incremental Learning)**: Data arrives chronologically, simulating real-world temporal distribution shifts.
+
+---
 
 ### 📊 Evaluation Metrics
 Regarding the detailed evaluation metrics (such as average accuracy, forgetting rate, zero-shot capability degradation, etc.), we provide a clear and intuitive diagram (as shown below) in the paper for comprehensive explanation. The diagram details how each metric is calculated.
