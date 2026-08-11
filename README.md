@@ -63,14 +63,9 @@ Our survey identifies three core failure modes in VLM-CL:
 
 Based on these challenges, we propose a **solution-driven taxonomy** to categorize existing methods, which forms the structure for the paper list below. This repository serves as a community-driven hub for tracking state-of-the-art methods, datasets, and fostering collaboration.
 
-### 🧠 Multi-Modal Replay (MMRE)
-*Strategies that mitigate forgetting by revisiting previous knowledge, either through explicit data storage or implicit generation.*
-
-### ⚙️ Cross-Modal Regularization (CREG)
-*Strategies that preserve alignment by imposing constraints on the model's loss function or update process, often using knowledge distillation or by directly regularizing the feature space.*
-
-### 🛠️ Parameter-Efficient Adaptation (PEA)
-*Strategies that freeze the main pre-trained model and update only a small number of parameters using prompts, adapters, or low-rank updates to isolate task-specific knowledge.*
+- 🧠 **Multi-Modal Replay (MMRE)**: *Strategies that mitigate forgetting by revisiting previous knowledge, either through explicit data storage or implicit generation.*
+- ⚙️ **Cross-Modal Regularization (CREG)**: *Strategies that preserve alignment by imposing constraints on the model's loss function or update process, often using knowledge distillation or by directly regularizing the feature space.*
+- 🛠️ **Parameter-Efficient Adaptation (PEA)**: *Strategies that freeze the main pre-trained model and update only a small number of parameters using prompts, adapters, or low-rank updates to isolate task-specific knowledge.*
 
 ---
 
