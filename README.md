@@ -253,11 +253,49 @@ The tables below summarize all key datasets used in the literature according to 
 ---
 
 ### 📊 Evaluation Metrics
-Regarding the detailed evaluation metrics (such as average accuracy, forgetting rate, zero-shot capability degradation, etc.), we provide a clear and intuitive diagram (as shown below) in the paper for comprehensive explanation. The diagram details how each metric is calculated.
+Evaluating CL in VLMs necessitates a multifaceted approach that addresses both traditional CL desiderata and VLM-specific challenges (e.g., zero-shot generalization and cross-modal alignment). Key metrics discussed in our survey include:
+
+*   **Average & Last Accuracy**: Measures the mean task performance over all learning stages and the retained competence after full training.
+*   **Forgetting Ratio & Backward Transfer (BWT)**: Quantifies the maximum performance drop per task post-initial learning, or improvements induced by later learning.
+*   **Zero-Shot Transfer & Zero-Shot Degradation (ZSD)**: Explicitly evaluates the model's generalization to unseen tasks and measures the erosion of pre-acquired open-vocabulary capabilities.
+*   **Modality-Specific Metrics**: Utilizing Recall@K, mAP, and Answer Precision (AP) for Retrieval and VQA to diagnose asymmetric modality degradation.
+
+Regarding the detailed computation of these evaluation metrics, we provide a clear and intuitive diagram (as shown below) in the paper for comprehensive explanation. 
 
 <p align="center">
-  <img src="./assets/Metrics_01.png" alt="Challenge of VLM-CL" width="700"/>
+  <img src="./assets/Metrics_01.png" alt="Evaluation Metrics of VLM-CL" width="700"/>
 </p>
+
+---
+
+
+## 🚀 Future Directions
+
+Based on the gaps and trends identified in our survey, we propose several key directions for future research:
+
+* 📊 **Unified and Holistic Benchmarking**: Moving beyond simple classification accuracy to incorporate compositional zero-shot evaluation and temporal, web-scale data streams.
+
+
+* 💬 **Continual Learning for Generative and Interactive Tasks**: Enabling multimodal chatbots and agents to continually learn from human feedback and long-term memory without losing alignment.
+
+
+* 🤖 **Continual Learning for Vision-Language-Action (VLA) Models**: Transitioning to Embodied AI where cross-modal feature drift precipitates cascading physical failures, requiring skill-compositional strategies.
+
+
+* 📐 **Towards a Theoretical Understanding**: Developing mathematical models for cross-modal feature drift and theoretical bounds for Parameter-Efficient Adaptation.
+
+
+---
+
+## Star History
+
+<a href="https://www.star-history.com/?repos=YuyangSunshine%2FAwesome-Continual-learning-of-Vision-Language-Models&type=timeline&logscale=&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=YuyangSunshine/Awesome-Continual-learning-of-Vision-Language-Models&type=timeline&theme=dark&logscale&legend=top-left&sealed_token=V1aafKf6bIX4uvzSBMpZmcNCnQy_Ifb-2cGYqw0EDlELoJik11CUn34dEzYp_5oa5_fG8gcc3NgSVUeNgnUjWo3txFqdUtrFKnhqQ2I9IeexkWwtPnljTg" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=YuyangSunshine/Awesome-Continual-learning-of-Vision-Language-Models&type=timeline&logscale&legend=top-left&sealed_token=V1aafKf6bIX4uvzSBMpZmcNCnQy_Ifb-2cGYqw0EDlELoJik11CUn34dEzYp_5oa5_fG8gcc3NgSVUeNgnUjWo3txFqdUtrFKnhqQ2I9IeexkWwtPnljTg" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=YuyangSunshine/Awesome-Continual-learning-of-Vision-Language-Models&type=timeline&logscale&legend=top-left&sealed_token=V1aafKf6bIX4uvzSBMpZmcNCnQy_Ifb-2cGYqw0EDlELoJik11CUn34dEzYp_5oa5_fG8gcc3NgSVUeNgnUjWo3txFqdUtrFKnhqQ2I9IeexkWwtPnljTg" />
+ </picture>
+</a>
 
 ---
 
@@ -275,23 +313,10 @@ We welcome contributions! If you have a paper, dataset, or codebase that should 
 
 ---
 
-## Star History
-
-<a href="https://www.star-history.com/?repos=YuyangSunshine%2FAwesome-Continual-learning-of-Vision-Language-Models&type=timeline&logscale=&legend=top-left">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=YuyangSunshine/Awesome-Continual-learning-of-Vision-Language-Models&type=timeline&theme=dark&logscale&legend=top-left&sealed_token=V1aafKf6bIX4uvzSBMpZmcNCnQy_Ifb-2cGYqw0EDlELoJik11CUn34dEzYp_5oa5_fG8gcc3NgSVUeNgnUjWo3txFqdUtrFKnhqQ2I9IeexkWwtPnljTg" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=YuyangSunshine/Awesome-Continual-learning-of-Vision-Language-Models&type=timeline&logscale&legend=top-left&sealed_token=V1aafKf6bIX4uvzSBMpZmcNCnQy_Ifb-2cGYqw0EDlELoJik11CUn34dEzYp_5oa5_fG8gcc3NgSVUeNgnUjWo3txFqdUtrFKnhqQ2I9IeexkWwtPnljTg" />
-   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=YuyangSunshine/Awesome-Continual-learning-of-Vision-Language-Models&type=timeline&logscale&legend=top-left&sealed_token=V1aafKf6bIX4uvzSBMpZmcNCnQy_Ifb-2cGYqw0EDlELoJik11CUn34dEzYp_5oa5_fG8gcc3NgSVUeNgnUjWo3txFqdUtrFKnhqQ2I9IeexkWwtPnljTg" />
- </picture>
-</a>
-
----
-
 ## 🛠️ Maintenance
 * **Maintainers**: [Yuyang Liu](https://github.com/YuyangSunshine), Qiuhe Hong, [Linlan Huang](https://github.com/linlany), [Alexandra Gomez-Villa](https://github.com/AlexAndorra), and [Dipam Goswami](https://github.com/dipamgoswami).
 * **Contact**: sunshineliuyuyang@gmail.com
 * *Star the repo to show your support!* ⭐
 
 *Acknowledgments: This repository builds on the incredible efforts of the open-source research community.*
-
 
